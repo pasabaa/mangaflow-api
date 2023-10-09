@@ -40,7 +40,7 @@ Para obtener los detalles de un capítulo de manga, debes incluir el parámetro 
 
 Ejemplo de solicitud:
 
-`https://mangaflow-api.fly.dev/api/chapter?id=read-gf385024-chap-1` 
+`https://mangaflow-api.fly.dev/api/chapter?id=/chapter/manga-qk993867/chapter-40`
 
 ## Búsqueda de Mangas
 
