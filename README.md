@@ -48,4 +48,40 @@ Para realizar una búsqueda de mangas, debes incluir los parámetros `keyword` e
 
 Ejemplo de solicitud:
 
-`https://mangaflow-api.fly.dev/api/search?keyword=dragon&page=1` 
+`https://mangaflow-api.fly.dev/api/search?keyword=dragon&page=1`
+
+## Headers
+
+La API requiere de una API Key
+
+```js
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
+export const useFetchData = (url) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            'x-api-key': '59ad008f-pauo-3948-cntn-4b0484d9392b' // Tu API key
+          }
+        });
+        setData(response.data);
+      } catch (error) {
+        setError(error);
+        console.log(error)
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, [url]);
+
+  return { data, loading, error };
+};
+```
