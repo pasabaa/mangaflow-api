@@ -69,7 +69,7 @@ export const useFetchData = (url) => {
       try {
         const response = await axios.get(url, {
           headers: {
-            'x-api-key': '59ad008f-pauo-3948-cntn-4b0484d9392b' // Tu API key
+            'x-api-key': 'YOUR API KEY HERE' // Tu API key
           }
         });
         setData(response.data);
